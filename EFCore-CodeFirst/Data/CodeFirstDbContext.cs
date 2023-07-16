@@ -23,5 +23,7 @@ namespace EFCore_CodeFirst.Data
             modelBuilder.Entity<EmployeeRole>().HasOne(x => x.Employee).WithMany(y => y.EmployeeRole).HasForeignKey(k => k.EmployeeId);
             modelBuilder.Entity<EmployeeRole>().HasOne(x => x.Role).WithMany(y => y.EmployeeRole).HasForeignKey(k => k.RoleId);
         }
+
+        public DbSet<EFCore_CodeFirst.Models.Domain.Role>? Role { get; set; }
     }
 }
